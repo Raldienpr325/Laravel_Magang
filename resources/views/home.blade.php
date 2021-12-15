@@ -81,7 +81,7 @@
                         @can('admin')
                             <li class="nav-item has-treeview menu-open">
                                 <a href="{{ url('admin-1') }}" class="nav-link ">
-                                    <i class="nav-icon fas fa-recycle"></i>
+                                    <i class="nav-icon fas fa-address-book"></i>
                                     <p>
                                         Layanan
                                     </p>
@@ -89,7 +89,7 @@
                             </li>
                             <li class="nav-item has-treeview menu-open">
                                 <a href="{{ url('admin-2') }}" class="nav-link ">
-                                    <i class="nav-icon fas fa-recycle"></i>
+                                    <i class="nav-icon fas fa-user-check"></i>
                                     <p>
                                         Pelanggan
                                     </p>
@@ -97,7 +97,7 @@
                             </li>
                             <li class="nav-item has-treeview menu-open">
                                 <a href="{{ url('admin-3') }}" class="nav-link ">
-                                    <i class="nav-icon fas fa-recycle"></i>
+                                    <i class="nav-icon fas fa-user-alt"></i>
                                     <p>
                                         List User
                                     </p>
