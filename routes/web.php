@@ -25,6 +25,7 @@ Route::get('/checkout/{id}', [CrudController::class, 'checkout']);//->middleware
 Route::group(['middleware' => ['isAdmin']], function() {
     Route::get('/admin-1', [CrudController::class, 'crud']);
     Route::get('/admin-2', [CrudController::class, 'crud2']);
+    Route::get('/admin-3', [CrudController::class, 'listUser']);
     Route::get('/create-vote', [CrudController::class, 'create']);
     Route::post('/simpan-vote', [CrudController::class, 'store']);
     Route::get('/edit-layanan/{id}', [CrudController::class, 'edit']);

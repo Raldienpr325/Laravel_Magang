@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Layanan;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 use function GuzzleHttp\Promise\all;
@@ -20,6 +21,11 @@ class CrudController extends Controller
     public function crud2()
     {
         return view('admin.crud2');
+    }
+    public function listUser()
+    {
+        $listuser = User::paginate(15);
+        return view('admin.list',compact('listuser'));
     }
     public function home()
     {

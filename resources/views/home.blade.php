@@ -95,6 +95,14 @@
                                     </p>
                                 </a>
                             </li>
+                            <li class="nav-item has-treeview menu-open">
+                                <a href="{{ url('admin-3') }}" class="nav-link ">
+                                    <i class="nav-icon fas fa-recycle"></i>
+                                    <p>
+                                        List User
+                                    </p>
+                                </a>
+                            </li>
                         @endcan
                         @can('user')
                             <li class="nav-item has-treeview menu-open">
@@ -123,6 +131,7 @@
                 @yield('input-layanan')
                 @yield('edit-layanan')
                 @yield('checkout')
+                @yield('list')
             </section>
         </div>
 
