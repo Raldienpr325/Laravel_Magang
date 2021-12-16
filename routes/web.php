@@ -19,6 +19,7 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home', [CrudController::class, 'dataLayanan']);
 Route::get('/checkout/{id}', [CrudController::class, 'checkout']);//->middleware('isUser');
+Route::post('/checkout2/{id}', [CrudController::class, 'checkout2']);//->middleware('isUser');
     
 
 // Route Group Admin 

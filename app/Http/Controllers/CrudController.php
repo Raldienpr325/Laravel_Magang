@@ -35,6 +35,12 @@ class CrudController extends Controller
         $layanan = Layanan::findorfail($id);
         return view('user.checkout',compact('layanan'));
     }
+    public function checkout2(Request $request, $id){
+        $layanan2 = Layanan::findorfail($id);
+        $jumlah = $request['jumlah'];
+        $total = $layanan2['harga'] * $jumlah;
+        return view('user.checkout2',compact('layanan2','total','jumlah'));
+    }
 
     public function create(){
         return view('admin.layanan.input',[
