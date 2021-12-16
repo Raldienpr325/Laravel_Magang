@@ -14,12 +14,12 @@
                     <input type="text" id="namabarang" name="namabarang"
                         class="form-control @error('namabarangbarang') is-invalid 
                 @enderror"
-                        placeholder="namabarang" required autofocus value="{{ old('namabarang') }}">
+                        placeholder="Nama Barang" required autofocus value="{{ old('namabarang') }}">
                 </div>
                 <div class="form-group">
                     <input type="text" id="harga" name="harga"
                         class="form-control @error('harga') is-invalid     
-                @enderror" placeholder="harga"
+                @enderror" placeholder="Harga"
                         required autofocus value="{{ old('harga') }}">
                 </div>
                 <div class="form-group">

@@ -1,6 +1,6 @@
 @extends('home')
 @section('home1')
-    <h1 class="text-center">Jual Beli Barang Suka Rela</h1>
+    <h1 class="text-center">Selamat Datang di Layanan Kami</h1>
     <div class="container" style="padding: 20px">
         <div class="row">
             @foreach ($datas as $data)
@@ -12,7 +12,7 @@
                             <h1>{{ $data->namabarang }}</h1>
                             <p class="card-text"> Harga : {{ $data->stok }}</p>
                             <p class="card-text"> Stok : {{ $data->harga }}</p>
-                            <a href="{{ url('checkout', $data->id) }}" class="btn btn-primary">Buy this item</a>
+                            <a href="{{ url('checkout', $data->id) }}" class="btn btn-primary">Pesan Sekarang</a>
                         </div>
                     </div>
                 </div>

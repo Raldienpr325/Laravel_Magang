@@ -5,17 +5,26 @@
         <table class="table table-bordered">
             <tr>
                 <th>Nama Barang</th>
-                <th>Foto</th>
+                <th>Estimasi Waktu</th>
                 <th>Jumlah Barang</th>
+                <th>Biaya Layanan</th>
+                <th>Biaya PPN</th>
+                <th>Biaya Operasional</th>
+                <th>Biaya Pembuatan</th>
                 <th>Harga Total</th>
+                {{-- <th>Action</th> --}}
             </tr>
                 <tr>
-                    <td>{{ $layanan2["namabarang"] }}</td>
+                    <td>{{ $datacheckout["nama_barang"] }}</td>
                     <td>
-                        <img src="{{ asset('storage/' . $layanan2["foto"] ) }}" style="max-height: 140px">
-                    </td>
-                    <td>{{ $jumlah }}</td>
-                    <td>{{ $total }}</td>
+                        {{ $datacheckout["waktu"] }} Hari</td>
+                    <td>{{ $datacheckout["jumlah"] }} Buah</td>
+                    <td>{{ $datacheckout["biaya_layanan"] }}</td>
+                    <td>{{ $datacheckout["biaya_PPN"] }}</td>
+                    <td>{{ $datacheckout["biaya_operasional"] }}</td>
+                    <td>{{ $datacheckout["biaya_pembuatan"] }}</td>
+                    <td>{{ $datacheckout["biaya_total"] }}</td>
+                    {{-- <td><a href="{{ url('user-deal', $datacheckout) }}"> <button class="btn btn-warning">DEAL</button></a></td> --}}
                 </tr>
         </table>
     </div>
