@@ -23,8 +23,8 @@
                         <td>
                             <img src="{{ asset('storage/' . $item->foto) }}" style="max-height: 140px">
                         </td>
-                        <td>{{ $item->harga }}</td>
                         <td>{{ $item->stok }}</td>
+                        <td>{{ $item->harga }}</td>
                         <td>
                             <a href="{{ url('delete-layanan', $item->id) }}"> <button
                                     class="btn btn-danger">delete</button></a>
