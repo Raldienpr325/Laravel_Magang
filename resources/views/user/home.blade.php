@@ -16,7 +16,7 @@
                             @else
                                 <p class="card-text"> stok : {{ $data->stok }}</p>
                             @endif
-                            <p class="card-text"> harga : {{ $data->harga }}</p>
+                            <p class="card-text"> harga : Rp {{ number_format($data->harga) }}</p>
                             <a href="{{ url('checkout', $data->id) }}" class="btn btn-primary">Pesan Sekarang</a>
                         </div>
                     </div>
