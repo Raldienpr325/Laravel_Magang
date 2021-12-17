@@ -24,7 +24,7 @@
                             <img src="{{ asset('storage/' . $item->foto) }}" width="200" height="200">
                         </td>
                         <td>{{ $item->stok }}</td>
-                        <td>{{ $item->harga }}</td>
+                        <td>Rp {{ number_format($item->harga) }}</td>
                         <td>
                             <a href="{{ url('delete-layanan', $item->id) }}"> <button
                                     class="btn btn-danger">delete</button></a>

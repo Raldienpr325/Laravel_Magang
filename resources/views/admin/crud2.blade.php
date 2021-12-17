@@ -22,7 +22,7 @@
                         <td>{{ $item['nama_user'] }}</td>
                         <td>{{ $item['nama_barang'] }}</td>
                         <td>{{ $item['jumlah'] }}</td>
-                        <td>{{ $item['biaya_total'] }}</td>
+                        <td>Rp {{ number_format($item['biaya_total']) }}</td>
                         <td>Default Alamat</td>
                         <td>Default Kode Pos</td>
                         <td>
