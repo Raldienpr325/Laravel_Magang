@@ -20,6 +20,8 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/home', [CrudController::class, 'dataLayanan']);
 Route::get('/checkout/{id}', [CrudController::class, 'checkout']);//->middleware('isUser');
 Route::post('/checkout2/{id}', [CrudController::class, 'checkout2']);//->middleware('isUser');
+Route::get('/user-deal', [CrudController::class, 'checkoutdeal']);//->middleware('isUser');
+Route::get('/keranjang', [CrudController::class, 'keranjang']);//->middleware('isUser');
     
 
 // Route Group Admin 

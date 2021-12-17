@@ -113,6 +113,14 @@
                                     </p>
                                 </a>
                             </li>
+                            <li class="nav-item has-treeview menu-open">
+                                <a href="{{ url('keranjang') }}" class="nav-link ">
+                                    <i class="nav-icon fas fa-money-check"></i>
+                                    <p>
+                                        Keranjang
+                                    </p>
+                                </a>
+                            </li>
                         @endcan
 
 
@@ -132,6 +140,7 @@
                 @yield('edit-layanan')
                 @yield('checkout')
                 @yield('list')
+                @yield('keranjang')
             </section>
         </div>
 

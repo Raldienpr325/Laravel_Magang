@@ -10,23 +10,27 @@
                     <th>No </th>
                     <th>Nama Pelanggan</th>
                     <th>Barang Yang dipilih</th>
-                    <th>Stok</th>
+                    <th>Jumlah Barang</th>
                     <th>Harga Total</th>
+                    <th>Alamat</th>
+                    <th>Kode Pos</th>
                     <th>action</th>
                 </tr>
-                {{-- @foreach ($dtvote as $item) --}}
-                <tr>
-                    <td>1</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>
-                        <a href="{{ url('delete-vote') }}"> <button class="btn btn-danger">delete</button></a>
-                        <a href="{{ url('edit-vote') }}"> <button class="btn btn-warning">update</button></a>
-                    </td>
-                </tr>
-                {{-- @endforeach --}}
+                @foreach ($dtcheckout as $item)
+                    <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $item['nama_user'] }}</td>
+                        <td>{{ $item['nama_barang'] }}</td>
+                        <td>{{ $item['jumlah'] }}</td>
+                        <td>{{ $item['biaya_total'] }}</td>
+                       
+                        <td>
+                            <a href="{{ url('delete-vote') }}"> <button class="btn btn-danger">delete</button></a>
+                            <a href="{{ url('edit-vote') }}"> <button class="btn btn-warning">update</button></a>
+                        </td>
+                    </tr>
+
+                @endforeach
             </table>
         </div>
         {{-- <div class="card-footer">{{ $dtvote->links() }}</div> --}}

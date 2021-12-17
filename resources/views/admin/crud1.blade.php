@@ -21,7 +21,7 @@
                         <td>{{ $loop->iteration }} </td>
                         <td>{{ $item->namabarang }}</td>
                         <td>
-                            <img src="{{ asset('storage/' . $item->foto) }}" style="max-height: 140px">
+                            <img src="{{ asset('storage/' . $item->foto) }}" width="200" height="200">
                         </td>
                         <td>{{ $item->stok }}</td>
                         <td>{{ $item->harga }}</td>
