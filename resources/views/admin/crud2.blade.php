@@ -23,7 +23,8 @@
                         <td>{{ $item['nama_barang'] }}</td>
                         <td>{{ $item['jumlah'] }}</td>
                         <td>{{ $item['biaya_total'] }}</td>
-                       
+                        <td>Default Alamat</td>
+                        <td>Default Kode Pos</td>
                         <td>
                             <a href="{{ url('delete-vote') }}"> <button class="btn btn-danger">delete</button></a>
                             <a href="{{ url('edit-vote') }}"> <button class="btn btn-warning">update</button></a>
