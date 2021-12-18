@@ -6,7 +6,8 @@
                 Berhasil Checkout !
             </div>
             <a href="{{ url('keranjang') }}">
-                <p><button class="btn btn-sm btn-success">Lihat Keranjang</button></p>
+                <p><button class="btn btn-sm btn-success"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Lihat
+                        Keranjang</button></p>
             </a>
 
             <p> Detail Barang</p>
