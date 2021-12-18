@@ -71,7 +71,7 @@
                     <div class="info">
                         <a href="#" class="d-block" style="text-decoration: none;color:wheat">Haloo
                             {{ Auth::user()->name }}</a>
-                        <!-- {{ Auth::user()->name }} diambil dari layouts/app.blade.php -->
+                        <!--  diambil dari layouts/app.blade.php -->
                     </div>
                 </div>
 
@@ -103,6 +103,22 @@
                                     </p>
                                 </a>
                             </li>
+                            <li class="nav-item has-treeview menu-open">
+                                <a href="{{ url('admin-diagram') }}" class="nav-link ">
+                                    <i class="nav-icon fas fa-user-alt"></i>
+                                    <p>
+                                        Diagram
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item has-treeview menu-open">
+                                <a href="{{ url('admin-diagram2') }}" class="nav-link ">
+                                    <i class="nav-icon fas fa-user-alt"></i>
+                                    <p>
+                                        Diagram 2
+                                    </p>
+                                </a>
+                            </li>
                         @endcan
                         @can('user')
                             <li class="nav-item has-treeview menu-open">
@@ -114,7 +130,7 @@
                                 </a>
                             </li>
                             <li class="nav-item has-treeview menu-open">
-                                <a href="{{ url('keranjang') }}" class="nav-link ">
+                                <a href="{{ url('keranjang', Auth::user()->name) }}" class="nav-link ">
                                     <i class="nav-icon fas fa-money-check"></i>
                                     <p>
                                         Keranjang
@@ -141,6 +157,9 @@
                 @yield('checkout')
                 @yield('list')
                 @yield('keranjang')
+                @yield('hasil-diagram')
+                @yield('hasil-diagram2')
+
             </section>
         </div>
 
@@ -186,7 +205,8 @@
     <script src="{{ asset('adminLTE/dist') }}/js/pages/dashboard.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('adminLTE/dist') }}/js/demo.js"></script>
-
+    @yield('diagram')
+    @yield('diagram2')
 </body>
 
 </html>

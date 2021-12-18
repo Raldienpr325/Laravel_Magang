@@ -15,24 +15,24 @@
                     <td>
                         <img src="{{ asset('storage/' . $layanan['foto']) }}" style="max-height: 140px;">
                     </td>
-                    @if ($layanan['stok'] == 0)
-                        <div class="alert alert-danger" role="alert">
-                            Maaf Untuk Sementara Stok Sudah Habis :(
-                        </div>
-                        <td>Habis</td>
-                        <td>Habis</td>
-                        <td>
-                            <form>
-                                <fieldset disabled>
-                                    <div class="mb-3">
-                                        <input type="text" id="disabledTextInput" class="form-control"
-                                            placeholder="Stok Habis">
-                                    </div>
-                                    <button type="submit" class="btn btn-danger btn-group-sm">Beli</button>
-                                </fieldset>
-                            </form>
-                        </td>
-                    @else
+                        @if ($layanan['stok'] == 0)
+                            <div class="alert alert-danger" role="alert">
+                                Maaf Untuk Sementara Stok Sudah Habis :(
+                            </div>
+                            <td>Habis</td>
+                            <td>Habis</td>
+                            <td>
+                                <form>
+                                    <fieldset disabled>
+                                        <div class="mb-3">
+                                            <input type="text" id="disabledTextInput" class="form-control"
+                                                placeholder="Stok Habis">
+                                        </div>
+                                        <button type="submit" class="btn btn-danger btn-group-sm">Beli</button>
+                                    </fieldset>
+                                </form>
+                            </td>
+                        @else
                         <td>{{ $layanan['stok'] }}</td>
                         <td>{{ $layanan['harga'] }}</td>
                         <td>
