@@ -131,7 +131,7 @@
                             </li>
                             <li class="nav-item has-treeview menu-open">
                                 <a href="{{ url('keranjang') }}" class="nav-link ">
-                                    <i class="nav-icon fas fa-money-check"></i>
+                                    <i class="nav-icon fas fa-shopping-cart"></i>
                                     <p>
                                         Keranjang
                                     </p>
