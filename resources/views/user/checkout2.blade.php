@@ -5,6 +5,10 @@
             <div class="alert alert-success" role="alert">
                 Berhasil Checkout !
             </div>
+            <a href="{{ url('keranjang') }}">
+                <p><button class="btn btn-sm btn-success">Lihat Keranjang</button></p>
+            </a>
+
             <p> Detail Barang</p>
             <table class="table table-bordered">
                 <tr>

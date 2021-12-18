@@ -105,15 +105,15 @@
                             </li>
                             <li class="nav-item has-treeview menu-open">
                                 <a href="{{ url('admin-diagram') }}" class="nav-link ">
-                                    <i class="nav-icon fas fa-user-alt"></i>
+                                    <i class="nav-icon fas fa-chart-bar"></i>
                                     <p>
-                                        Diagram
+                                        Penjualan Tertinggi
                                     </p>
                                 </a>
                             </li>
                             <li class="nav-item has-treeview menu-open">
                                 <a href="{{ url('admin-diagram2') }}" class="nav-link ">
-                                    <i class="nav-icon fas fa-user-alt"></i>
+                                    <i class="nav-icon fas fa-chart-bar"></i>
                                     <p>
                                         Diagram 2
                                     </p>
@@ -130,7 +130,7 @@
                                 </a>
                             </li>
                             <li class="nav-item has-treeview menu-open">
-                                <a href="{{ url('keranjang', Auth::user()->name) }}" class="nav-link ">
+                                <a href="{{ url('keranjang') }}" class="nav-link ">
                                     <i class="nav-icon fas fa-money-check"></i>
                                     <p>
                                         Keranjang
