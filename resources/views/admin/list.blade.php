@@ -10,7 +10,6 @@
                     <th>No </th>
                     <th>Nama User</th>
                     <th>Email</th>
-                    <th>action</th>
                 </tr>
                 @foreach ($listuser as $item)
                     <tr>
@@ -18,10 +17,6 @@
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->email }}</td>
 
-                        <td>
-                            <a href="#"> <button class="btn btn-danger">delete</button></a>
-                            <a href="#"> <button class="btn btn-warning">update</button></a>
-                        </td>
                     </tr>
                 @endforeach
             </table>

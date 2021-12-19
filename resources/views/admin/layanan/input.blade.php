@@ -29,6 +29,12 @@
                         autofocus value="{{ old('stok') }}">
                 </div>
                 <div class="form-group">
+                    <input type="text" id="harga" name="harga"
+                        class="form-control @error('harga') is-invalid     
+                @enderror" placeholder="harga"
+                        required autofocus value="{{ old('harga') }}">
+                </div>
+                <div class="form-group">
                     <button class="btn btn-success btn-group-sm">input data</button>
                 </div>
             </form>

@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-use function GuzzleHttp\Promise\all;
 
 class CrudController extends Controller
 {
@@ -59,21 +58,29 @@ class CrudController extends Controller
             'biaya_operasional' => $perhitunganoperasional,
             'biaya_pembuatan' => $perhitunganpembuatan,
             'biaya_total' => $perhitunganbiayatotal,
-        ] ;
-        checkout::create($datacheckout);
-        DB::table('Layanans')
+        ];
+        if($stokbaru < 0){
+            return redirect()->back(); //kalau stok sudah <= 0 maka gamasuk database
+        }
+        else{
+            checkout::create($datacheckout);
+            DB::table('Layanans')
             ->where('id', $id)
             ->update(['stok' => $stokbaru]);
         return view('user.checkout2',compact('datacheckout'));
+        }
+    }
+    public function keranjang(){
+        $keranjang = checkout::where('nama_user',Auth::user()->name)->get();
+        $namauser = Auth::user()->name;
+        if(Auth::user()->name == $keranjang){
+            return redirect()->back();
+        }
+        else{
+            return view('user.keranjang',compact('keranjang'));
+        }
     }
 
-    // public function checkoutdeal($datacheckout){
-    //     // Checkout::create($datacheckout);
-    //     dd($datacheckout);
-    //     return view('admin.layanan.input',[
-    //         'tittle' => 'input layanan'
-    //     ]);
-    // }
 
     public function create(){
         return view('admin.layanan.input',[
@@ -120,4 +127,40 @@ class CrudController extends Controller
             'datas' => $datalayanan,
         ]);
     }
+    public function delKeranjang($id)
+    {
+        $delCheckout=checkout::findorfail($id);
+        $tambahStok=Layanan::all();
+        $stokbaru = $delCheckout['jumlah'] + $tambahStok['stok'];
+        if($delCheckout->delete()){
+            // checkout::create($delCheckout);
+            DB::table('Layanans')
+            ->where('id', $id)
+            ->update(['stok' => $stokbaru]);
+            return back();
+        }
+    } 
+    
+    public function diagram(){
+        $dtDiagram = checkout::get();
+        $categories = [];
+        $data = [];
+        foreach ($dtDiagram as $rek) {
+            $categories[] = $rek->nama_barang;
+            $data[] = $rek->jumlah;
+        }
+        return view('admin.diagram', ['categories' => $categories, 'data' => $data]);
+    }
+    public function diagram2(){
+        $dtDiagram = checkout::get();
+        $categories = [];
+        $data = [];
+        foreach ($dtDiagram as $rek) {
+            $categories[] = $rek->nama_barang;
+            $data[] = $rek->jumlah;
+        }
+        return view('admin.diagram2', ['categories' => $categories, 'data' => $data]);
+    }
+    
+    
 }

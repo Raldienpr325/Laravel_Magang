@@ -21,10 +21,10 @@
                         <td>{{ $loop->iteration }} </td>
                         <td>{{ $item->namabarang }}</td>
                         <td>
-                            <img src="{{ asset('storage/' . $item->foto) }}" style="max-height: 140px">
+                            <img src="{{ asset('storage/' . $item->foto) }}" width="200" height="200">
                         </td>
-                        <td>{{ $item->harga }}</td>
                         <td>{{ $item->stok }}</td>
+                        <td>Rp {{ number_format($item->harga) }}</td>
                         <td>
                             <a href="{{ url('delete-layanan', $item->id) }}"> <button
                                     class="btn btn-danger">delete</button></a>
