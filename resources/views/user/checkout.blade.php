@@ -46,6 +46,12 @@
                                         placeholder="Jumlah Barang" required autofocus value="{{ old('jumlah') }}">
                                 </div>
                                 <div class="form-group">
+                                    <input type="text" id="alamat" name="alamat"
+                                        class="form-control @error('alamat') is-invalid     
+                        @enderror"
+                                        placeholder="Alamat Anda" required value="{{ old('alamat') }}">
+                                </div>
+                                <div class="form-group">
                                     <button class="btn btn-danger btn-group-sm">Beli</button>
                                 </div>
                             </form>

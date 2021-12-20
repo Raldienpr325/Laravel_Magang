@@ -20,6 +20,7 @@ class Checkout extends Migration
             $table->string('nama_barang');
             $table->integer('waktu');
             $table->integer('jumlah');
+            $table->string('alamat');
             $table->integer('biaya_layanan');
             $table->integer('biaya_PPN');
             $table->integer('biaya_operasional');

@@ -1,7 +1,10 @@
 @extends('home')
 @section('checkout')
-<div class="content">
-   <h1>INI BERHASIL</h1>
-    {{-- <div class="card-footer">{{ $dtlayanan->links() }}</div> --}}
-</div>
+    <div class="content mt-3">
+        <div class="alert alert-success" role="alert">
+            Pembayaran Berhasil Dilakukan
+        </div>
+        <a href="{{ url('home') }}"> <button class="btn btn-primary btn-sm">Home</button></a>
+
+    </div>
 @endsection

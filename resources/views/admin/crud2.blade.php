@@ -13,8 +13,8 @@
                     <th>Jumlah Barang</th>
                     <th>Harga Total</th>
                     <th>Alamat</th>
-                    <th>Kode Pos</th>
-                    <th>action</th>
+                    <th>Waktu Pembelian</th>
+                    <th>Estimasi Pengerjaan</th>
                 </tr>
                 @foreach ($dtcheckout as $item)
                     <tr>
@@ -23,17 +23,14 @@
                         <td>{{ $item['nama_barang'] }}</td>
                         <td>{{ $item['jumlah'] }}</td>
                         <td>Rp {{ number_format($item['biaya_total']) }}</td>
-                        <td>Default Alamat</td>
-                        <td>Default Kode Pos</td>
-                        <td>
-                            <a href="{{ url('delete-vote') }}"> <button class="btn btn-danger">delete</button></a>
-                            <a href="{{ url('edit-vote') }}"> <button class="btn btn-warning">update</button></a>
-                        </td>
+                        <td>{{ $item['alamat'] }}</td>
+                        <td>{{ $item->created_at->format('d M Y - H:i:s') }}</td>
+                        <td>{{ $item->waktu }} Hari</td>
                     </tr>
 
                 @endforeach
             </table>
         </div>
-        {{-- <div class="card-footer">{{ $dtvote->links() }}</div> --}}
+        {{-- <div class="card-footer">{{ $dtcheckout->links() }}</div> --}}
     </div>
 @endsection

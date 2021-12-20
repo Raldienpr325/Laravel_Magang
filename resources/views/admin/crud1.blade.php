@@ -1,12 +1,8 @@
 @extends('home')
 @section('crud1')
     <div class="content">
-        <div class="card card-info card-outline">
-            <div class="card-header">
-                <a href="{{ url('create-vote') }}" class="btn btn-success">add data</a>
-            </div>
-        </div>
         <div class="card-body">
+            <a href="{{ url('create-vote') }}" class="btn btn-success mb-3 ">add data</a>
             <table class="table table-bordered">
                 <tr>
                     <th>No </th>
@@ -26,10 +22,10 @@
                         <td>{{ $item->stok }}</td>
                         <td>Rp {{ number_format($item->harga) }}</td>
                         <td>
-                            <a href="{{ url('delete-layanan', $item->id) }}"> <button
-                                    class="btn btn-danger">delete</button></a>
-                            <a href="{{ url('edit-layanan', $item->id) }}"> <button
-                                    class="btn btn-warning">update</button></a>
+                            <a href="{{ url('delete-layanan', $item->id) }}"> <button class="fas fa-trash border-0"
+                                    style="color: red"></button></a>
+                            <a href="{{ url('edit-layanan', $item->id) }}"> <button class="fas fa-pen border-0"
+                                    style="color: green"></button></a>
                         </td>
                     </tr>
                 @endforeach

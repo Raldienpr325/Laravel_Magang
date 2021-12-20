@@ -17,12 +17,6 @@
                         placeholder="Nama Barang" required autofocus value="{{ old('namabarang') }}">
                 </div>
                 <div class="form-group">
-                    <input type="text" id="harga" name="harga"
-                        class="form-control @error('harga') is-invalid     
-                @enderror" placeholder="Harga"
-                        required autofocus value="{{ old('harga') }}">
-                </div>
-                <div class="form-group">
                     <input type="text" id="stok" name="stok"
                         class="form-control @error('stok') is-invalid 
                 @enderror" placeholder="stok" required
