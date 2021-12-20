@@ -22,6 +22,8 @@ Route::get('/checkout/{id}', [CrudController::class, 'checkout']);//->middleware
 Route::post('/checkout2/{id}', [CrudController::class, 'checkout2']);//->middleware('isUser');
 Route::get('/user-deal', [CrudController::class, 'checkoutdeal']);//->middleware('isUser');
 Route::get('/keranjang', [CrudController::class, 'keranjang']);//->middleware('isUser');
+Route::get('/delete-keranjang/{id}', [CrudController::class, 'delKeranjang']);
+Route::get('/dealcheckout', [CrudController::class, 'dealcheckout']);
     
 
 // Route Group Admin 
@@ -36,6 +38,5 @@ Route::group(['middleware' => ['isAdmin']], function() {
     Route::get('/edit-layanan/{id}', [CrudController::class, 'edit']);
     Route::post('/update-layanan/{id}', [CrudController::class, 'update']);
     Route::get('/delete-layanan/{id}', [CrudController::class, 'destroy']);
-    Route::get('/delete-keranjang/{id}', [CrudController::class, 'delKeranjang']);
 });
     

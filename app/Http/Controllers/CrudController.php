@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Layanan;
 use App\Models\User;
 use App\Models\checkout;
+use App\Models\datapenjualan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -53,16 +54,31 @@ class CrudController extends Controller
             'nama_barang' => $layanan2['namabarang'],
             'waktu' => 1 * $request['jumlah'],
             'jumlah' => $request['jumlah'],
+            'alamat' => $request['alamat'],
             'biaya_layanan' => $perhitunganlayanan,
             'biaya_PPN' => $perhitunganppn,
             'biaya_operasional' => $perhitunganoperasional,
             'biaya_pembuatan' => $perhitunganpembuatan,
             'biaya_total' => $perhitunganbiayatotal,
         ];
+
+        
+        // $data = DB::table("Layanans")
+	    // ->select(DB::raw("SUM(stok) as count"))
+	    // ->orderBy("created_at")
+	    // ->groupBy(DB::raw("year(created_at)"))
+	    // ->get();
+        // $datapenjualan = [
+        //     'januari' => $data['0'],
+        //     'februari' => $data['1'], 
+        //     'maret' => $data['2'], 
+        //     'april' => $data['3'], 
+        // ];
         if($stokbaru < 0){
             return redirect()->back(); //kalau stok sudah <= 0 maka gamasuk database
         }
         else{
+            // datapenjualan::create($datapenjualan);
             checkout::create($datacheckout);
             DB::table('Layanans')
             ->where('id', $id)
@@ -81,7 +97,15 @@ class CrudController extends Controller
         }
     }
 
-
+    public function dealcheckout(){$keranjang = checkout::where('nama_user',Auth::user()->name)->get();
+        $namauser = Auth::user()->name;
+        if(Auth::user()->name == $keranjang){
+            return redirect()->back();
+        }
+        else{
+            return view('user.keranjang',compact('keranjang'));
+        }
+    }
     public function create(){
         return view('admin.layanan.input',[
             'tittle' => 'input layanan'
@@ -129,16 +153,22 @@ class CrudController extends Controller
     }
     public function delKeranjang($id)
     {
-        $delCheckout=checkout::findorfail($id);
-        $tambahStok=Layanan::all();
-        $stokbaru = $delCheckout['jumlah'] + $tambahStok['stok'];
-        if($delCheckout->delete()){
+        // $delCheckout=checkout::findorfail($id);
+        $delCheckout1 = DB::table('checkout')->where('id', $id)->value('nama_barang');
+        $delCheckout2 = DB::table('checkout')->where('id', $id)->value('jumlah');
+        $tambahStok = DB::table('Layanans')->where('namabarang', $delCheckout1)->value('stok');
+        $stokbaru = $delCheckout2 + $tambahStok;
+        // if($delCheckout->delete()){
             // checkout::create($delCheckout);
-            DB::table('Layanans')
+            // dd($tambahStok);
+            DB::table('checkout')
             ->where('id', $id)
+            ->delete();
+            DB::table('Layanans')
+            ->where('namabarang', $delCheckout1)
             ->update(['stok' => $stokbaru]);
             return back();
-        }
+        // }
     } 
     
     public function diagram(){

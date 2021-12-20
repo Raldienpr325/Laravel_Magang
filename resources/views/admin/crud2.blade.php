@@ -34,6 +34,6 @@
                 @endforeach
             </table>
         </div>
-        <div class="card-footer">{{ $dtcheckout->links() }}</div>
+        {{-- <div class="card-footer">{{ $dtcheckout->links() }}</div> --}}
     </div>
 @endsection

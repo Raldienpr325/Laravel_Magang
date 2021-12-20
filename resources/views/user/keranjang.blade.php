@@ -12,21 +12,19 @@
                 <th>Estimasi Waktu</th>
                 <th>Jumlah Barang</th>
                 <th>Alamat</th>
-                <th>Kode Pos</th>
                 <th>Total Pembayaran</th>
-                {{-- <th>Action</th> --}}
+                <th>Action</th>
             </tr>
             <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $item->nama_user }}</td>
                 <td>{{ $item['nama_barang'] }}</td>
-                <td>kapan checkout</td>
-                <td> {{ $item['waktu'] }} Hari</td>
+                <td>{{ $item['created_at'] }} </td>
+                <td>{{ $item['waktu'] }} Hari</td>
                 <td>{{ $item['jumlah'] }} Buah</td>
-                <td>Jl Nogosari kavling 20 Malang</td>
-                <td>123123</td>
+                <td>{{ $item['alamat'] }}</td>
                 <td>Rp {{ number_format($item->biaya_total) }}</td>
-                {{-- <td><a href="{{ url('delete-keranjang', $item->id) }}"> <button class="btn btn-danger">delete</button></a> --}}
+                <td><a href="{{ url('delete-keranjang', $item) }}"> <button class="btn btn-danger">delete</button></a>
                 </td>
             </tr>
         </table>

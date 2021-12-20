@@ -17,7 +17,6 @@
                     <th>Estimasi Waktu</th>
                     <th>Jumlah Barang</th>
                     <th>Alamat</th>
-                    <th>Kode Pos</th>
                 </tr>
                 <tr>
                     <td>{{ $datacheckout['nama_barang'] }}</td>
@@ -25,8 +24,7 @@
                         {{ $datacheckout['waktu'] }} Hari</td>
                     <td>{{ $datacheckout['jumlah'] }} Buah</td>
 
-                    <td>Jl Nogosari kavling 20 Malang</td>
-                    <td>123123</td>
+                    <td>{{ $datacheckout['alamat'] }}</td>
                 </tr>
             </table>
             <br>
@@ -61,8 +59,7 @@
             <br>
             <table class="table table-bordered">
                 <tr>
-                    <th>Bayar sekarang</th>
-                    <td><button class="btn  btn-danger">Bayar</button></td>
+                    <th><a href="{{ url('dealcheckout') }}" class="btn btn-primary">Home</a></th>
                 </tr>
             </table>
             <br>
