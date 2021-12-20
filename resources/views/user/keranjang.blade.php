@@ -4,18 +4,20 @@
     <h2 class="text-center mt-3 mb-3"> Daftar checkout anda</h2>
     @foreach ($keranjang as $item)
         <table class="table table-bordered">
-            <tr>
-                <th>No</th>
-                <th>Nama Pembeli</th>
-                <th>Nama Barang</th>
-                <th>Hari checkout</th>
-                <th>Estimasi Waktu</th>
-                <th>Jumlah Barang</th>
-                <th>Alamat</th>
-                <th>Kode Pos</th>
-                <th>Total Pembayaran</th>
-                {{-- <th>Action</th> --}}
-            </tr>
+            <thead class="thead-light">
+                <tr>
+                    <th>No</th>
+                    <th>Nama Pembeli</th>
+                    <th>Nama Barang</th>
+                    <th>Hari checkout</th>
+                    <th>Estimasi Waktu</th>
+                    <th>Jumlah Barang</th>
+                    <th>Alamat</th>
+                    <th>Kode Pos</th>
+                    <th>Total Pembayaran</th>
+                    {{-- <th>Action</th> --}}
+                </tr>
+            </thead>
             <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $item->nama_user }}</td>

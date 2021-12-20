@@ -26,7 +26,7 @@
                     <td>{{ $datacheckout['jumlah'] }} Buah</td>
 
                     <td>Jl Nogosari kavling 20 Malang</td>
-                    <td>123123</td>
+                    <td>{{ rand(1000, 2000) }}</td>
                 </tr>
             </table>
             <br>

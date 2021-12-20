@@ -69,8 +69,8 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block" style="text-decoration: none;color:wheat">Haloo
-                            {{ Auth::user()->name }}</a>
+                        <a href="#" class="d-block" style="text-decoration: none;color:wheat">Hi
+                            {{ Auth::user()->name }} !</a>
                         <!--  diambil dari layouts/app.blade.php -->
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                                 <a href="{{ url('admin-2') }}" class="nav-link ">
                                     <i class="nav-icon fas fa-user-check"></i>
                                     <p>
-                                        Pelanggan
+                                        Data Pelanggan
                                     </p>
                                 </a>
                             </li>
