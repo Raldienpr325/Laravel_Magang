@@ -107,7 +107,7 @@
                                 <a href="{{ url('admin-diagram') }}" class="nav-link ">
                                     <i class="nav-icon fas fa-chart-bar"></i>
                                     <p>
-                                        Penjualan Tertinggi
+                                       Diagram Penjualan
                                     </p>
                                 </a>
                             </li>
@@ -115,7 +115,7 @@
                                 <a href="{{ url('admin-diagram2') }}" class="nav-link ">
                                     <i class="nav-icon fas fa-chart-bar"></i>
                                     <p>
-                                        Diagram 2
+                                        Diagram Stok Barang
                                     </p>
                                 </a>
                             </li>
